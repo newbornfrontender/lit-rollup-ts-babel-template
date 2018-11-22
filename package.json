@@ -1,0 +1,40 @@
+{
+  "name": "lit-rollup-ts-babel-template",
+  "version": "1.0.0",
+  "description": "Простой шаблон для LitElement и lit-html, где TS осуществляет проверку типов, а Babel - компиляцию",
+  "main": "index.js",
+  "repository": "https://github.com/newbornfrontender/lit-rollup-ts-babel-template.git",
+  "author": "Infant Frontender <newbornfrontender@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "prettier": "prettier --write {src,public}/**/*.{html,ts}",
+    "typescript": "tsc --noEmit",
+    "typescript:watch": "yarn typescript:check --watch",
+    "babel": "babel src --out-dir lib/babel --extensions .ts",
+    "babel:watch": "yarn babel --watch",
+    "rollup": "rollup --config",
+    "rollup:watch": "yarn build --watch",
+    "build": "cross-env NODE_ENV=production yarn rollup && terser lib/rollup/index.js --output public/index.js"
+  },
+  "dependencies": {
+    "@polymer/lit-element": "^0.6.3",
+    "lit-html": "^0.13.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-typescript": "^7.1.0",
+    "cross-env": "^5.2.0",
+    "prettier": "^1.15.2",
+    "rollup": "^0.67.3",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-typescript": "^1.0.0",
+    "terser": "^3.10.12",
+    "tslib": "^1.9.3",
+    "typescript": "^3.1.6"
+  }
+}
